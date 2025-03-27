@@ -20,7 +20,7 @@ public class heroFootsteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float direction = Input.GetAxis("horizontal");
+        float direction = Input.GetAxis("Horizontal");
 
         sr.flipX = (direction < 0);
         animator.SetFloat("movement", Mathf.Abs(direction));
