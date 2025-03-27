@@ -20,7 +20,7 @@ public class knight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float direction = Input.GetAxis("Horizontal"); //make sure the H is capital written.  
+        float direction = Input.GetAxis("Horizontal"); //make sure the H is capital written.   
 
         sr.flipX = (direction < 0);
         animator.SetFloat("movement", Mathf.Abs(direction));
