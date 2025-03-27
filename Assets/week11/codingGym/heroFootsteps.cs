@@ -9,11 +9,16 @@ public class heroFootsteps : MonoBehaviour
     public float speed = 2;
     public bool canRun = true;
 
+    public AudioClip clip;
+    public AudioSource audioSource;
+  
+
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        //clip = GetComponent<audioSource>();
 
     }
 
