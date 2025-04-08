@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,12 +11,15 @@ public class flashlight : MonoBehaviour
 
     public bool resetTimer = false;
 
+    public Button stopButton;
+
     // Start is called before the first frame update
     void Start()
     {
         sliderTimer.minValue = 0;
         sliderTimer.maxValue = 3;
         sliderTimer.value = sliderTimer.maxValue;
+
 
         StartCoroutine(nightBarRepeating());
     }
