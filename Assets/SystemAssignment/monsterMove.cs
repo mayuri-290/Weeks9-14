@@ -13,6 +13,8 @@ public class monsterMove : MonoBehaviour
 
     public float touchRange = 1f;
 
+
+
     //public List<GameObject> monstersList;
     public Slider healthBar;
 
@@ -42,16 +44,21 @@ public class monsterMove : MonoBehaviour
 
             if (distance < touchRange)
             {
-                playerHit.Invoke();
-                Destroy(gameObject);
+
+            playerHit.Invoke();
+            Destroy(gameObject);
+
             }
-        }
-     //}
+        Debug.Log("Health Bar Initial Value: " + healthBar.value);
+
+    }
+    //}
 
     public void DecreaseHealth()
     {
         healthBar.value -= 10;
     }
+
 
  }
 
