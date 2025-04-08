@@ -20,6 +20,8 @@ public class monsterMove : MonoBehaviour
 
     public UnityEvent playerHit;
 
+    public GameObject loseScene;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,11 @@ public class monsterMove : MonoBehaviour
     public void DecreaseHealth()
     {
         healthBar.value -= 10;
+
+        if(healthBar.value<=0)
+        {
+            loseScene.SetActive(true);
+        }
     }
 
 

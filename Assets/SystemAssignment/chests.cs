@@ -13,6 +13,10 @@ public class chests : MonoBehaviour
     public Transform playerPos;
     public TextMeshProUGUI scoreText;
 
+    public GameObject winningScene;
+
+    public gameManager gameManager;
+
 
     public List<GameObject> chestList;
 
@@ -22,6 +26,8 @@ public class chests : MonoBehaviour
         //chestList = new List<GameObject>(); Problems occurs when adding this initializing list. Because it will reset the condition of chests.
 
         scoreText.text = " " + score;
+
+        gameManager.hasWon = false;
     }
 
     // Update is called once per frame
@@ -46,6 +52,12 @@ public class chests : MonoBehaviour
                     Debug.Log("Collected a chest!");
                 }
             }
+        }
+
+        if(score>=8)
+        {
+            gameManager.hasWon = true;
+            winningScene.SetActive(true);
         }
 
         scoreText.text = " " + score;
