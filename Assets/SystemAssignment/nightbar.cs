@@ -26,6 +26,6 @@ public class nightbar : MonoBehaviour
         sliderTimer.value = Mathf.Max(sliderTimer.value, 0);
     }
 
-   
 }
+
 

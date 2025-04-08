@@ -7,20 +7,46 @@ using UnityEngine.UI;
 public class flashlight : MonoBehaviour
 {
     public Slider sliderTimer;
-    public float t = 0.5f;
+
+    public bool resetTimer = false;
 
     // Start is called before the first frame update
     void Start()
     {
         sliderTimer.minValue = 0;
         sliderTimer.maxValue = 3;
-        sliderTimer.value = t;
+        sliderTimer.value = sliderTimer.maxValue;
+
+        StartCoroutine(nightBarRepeating());
+    }
+
+    private void Update()
+    {
+        if (resetTimer)
+        {
+            StartCoroutine(nightBarRepeating());
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    IEnumerator nightBarRepeating()
     {
-        sliderTimer.value -= Time.deltaTime * 0.2f;
-        sliderTimer.value = Mathf.Max(sliderTimer.value, 0);
+        resetTimer = false;
+        float t = 0;
+
+        while (sliderTimer.value > sliderTimer.minValue)
+        {
+            sliderTimer.value -= Time.deltaTime;
+            yield return null;
+        }
+
+        while (t < 3)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        sliderTimer.value = sliderTimer.maxValue;
+        resetTimer = true;
     }
 }
