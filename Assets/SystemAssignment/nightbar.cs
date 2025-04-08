@@ -10,6 +10,8 @@ public class nightbar : MonoBehaviour
     public float t = 0.5f;
     public TextMeshProUGUI timerText;
 
+    public GameObject loseScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,11 @@ public class nightbar : MonoBehaviour
     {
         sliderTimer.value -= Time.deltaTime*0.2f;
         sliderTimer.value = Mathf.Max(sliderTimer.value, 0);
+
+        if(sliderTimer.value<=0)
+        {
+            loseScene.SetActive(true);
+        }
     }
 
 }

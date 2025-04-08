@@ -13,6 +13,8 @@ public class flashlight : MonoBehaviour
 
     public Button stopButton;
 
+    public GameObject background;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +31,14 @@ public class flashlight : MonoBehaviour
         if (resetTimer)
         {
             StartCoroutine(nightBarRepeating());
+            background.SetActive(true);
         }
     }
 
     // Update is called once per frame
     IEnumerator nightBarRepeating()
     {
+
         resetTimer = false;
         float t = 0;
 
@@ -44,12 +48,15 @@ public class flashlight : MonoBehaviour
             yield return null;
         }
 
+        background.SetActive(false);
+
         while (t < 3)
         {
             t += Time.deltaTime;
             yield return null;
         }
 
+        
         sliderTimer.value = sliderTimer.maxValue;
         resetTimer = true;
     }
