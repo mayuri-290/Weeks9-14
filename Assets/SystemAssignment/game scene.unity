@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderTimer: {fileID: 67140541}
-  t: 3
+  resetTimer: 0
 --- !u!1 &91883075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2530,6 +2530,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870317412}
   m_CullTransparentMesh: 1
+--- !u!1 &1920617564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1920617566}
+  - component: {fileID: 1920617565}
+  m_Layer: 0
+  m_Name: chestscript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1920617565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920617564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540ad686edc012b4d909f9a00a3ad452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  touchRange: 2
+  openChest: {fileID: -3888567672798316567, guid: 19e07f9d107e445408633f50457d456e, type: 3}
+  playerPos: {fileID: 39852649}
+  chestList:
+  - {fileID: 209304533}
+  - {fileID: 981047834}
+  - {fileID: 488922788}
+  - {fileID: 1366658744}
+  - {fileID: 104206352}
+  - {fileID: 458720679}
+  - {fileID: 2121480521}
+  - {fileID: 653786707}
+--- !u!4 &1920617566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920617564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7914971, y: 0.08636384, z: -9.907378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1920651140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +3020,7 @@ SceneRoots:
   - {fileID: 2119605724}
   - {fileID: 1461779272}
   - {fileID: 783885678}
+  - {fileID: 1920617566}
   - {fileID: 209304535}
   - {fileID: 981047836}
   - {fileID: 488922790}
