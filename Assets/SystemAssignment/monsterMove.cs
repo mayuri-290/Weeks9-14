@@ -9,19 +9,20 @@ public class monsterMove : MonoBehaviour
 {
     public float MonsterSpeed = 1f;
     public Transform PlayerPos;
-    //public bool monsterStay;
 
     public float touchRange = 1f;
 
 
-
     //public List<GameObject> monstersList;
+
     public Slider healthBar;
 
     public UnityEvent playerHit;
 
     public GameObject loseScene;
 
+    public gameManager gameManager;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,12 @@ public class monsterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //stop here. Stop the following code moving, make sures losing condition don't pops out.
+        if (gameManager.hasWon == true)
+        {
+            return;
+        }
+         
         transform.up = PlayerPos.position - transform.position;
         transform.position += transform.up * MonsterSpeed * Time.deltaTime;
 
