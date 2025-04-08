@@ -29,7 +29,7 @@ public class nightbar : MonoBehaviour
 
         if(sliderTimer.value<=0)
         {
-            loseScene.SetActive(true);
+            loseScene.SetActive(true); 
         }
     }
 
