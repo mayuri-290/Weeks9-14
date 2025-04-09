@@ -11,9 +11,9 @@ public class flashlight : MonoBehaviour
 
     public bool resetTimer = false;
 
-    public Button stopButton;
-
     public GameObject background;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,7 @@ public class flashlight : MonoBehaviour
             StartCoroutine(nightBarRepeating());
             background.SetActive(true);
         }
+
     }
 
     // Update is called once per frame
