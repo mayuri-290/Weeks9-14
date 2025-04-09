@@ -12,6 +12,9 @@ public class nightbar : MonoBehaviour
 
     public GameObject loseScene;
 
+    public gameManager gameManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,11 @@ public class nightbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.hasWon == true)
+        {
+            return;
+        }
+
         sliderTimer.value -= Time.deltaTime*0.2f;
         sliderTimer.value = Mathf.Max(sliderTimer.value, 0);
 

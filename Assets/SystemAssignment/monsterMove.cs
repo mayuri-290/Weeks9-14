@@ -31,6 +31,8 @@ public class monsterMove : MonoBehaviour
         healthBar.maxValue = 50;
         healthBar.value = healthBar.maxValue;
 
+        playerHit.AddListener(DecreaseHealth);
+
     }
 
     // Update is called once per frame
@@ -41,7 +43,7 @@ public class monsterMove : MonoBehaviour
         {
             return;
         }
-         
+
         transform.up = PlayerPos.position - transform.position;
         transform.position += transform.up * MonsterSpeed * Time.deltaTime;
 
@@ -65,6 +67,8 @@ public class monsterMove : MonoBehaviour
 
     public void DecreaseHealth()
     {
+        
+
         healthBar.value -= 10;
 
         if(healthBar.value<=0)
@@ -72,6 +76,7 @@ public class monsterMove : MonoBehaviour
             loseScene.SetActive(true);
         }
     }
+
 
 
  }

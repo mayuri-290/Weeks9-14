@@ -49,7 +49,6 @@ public class flashlight : MonoBehaviour
         }
 
         background.SetActive(false);
-
         while (t < 3)
         {
             t += Time.deltaTime;
