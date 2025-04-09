@@ -5,7 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-
+//I create this script to make chest and player interaction. Also adding the winning condition.
+//For example, when the player collects 8 chest, the wnning scene will pop out. 
 public class chests : MonoBehaviour
 {
     public int score = 0;
