@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    AudioSource audioSource;//I ass a audio component that will play sounds.
+    AudioSource audioSource;//I add a audio component that will play sounds.
     public AudioClip hitSound;//This variable is for determine if the monster hit the player, hit sound will play. 
 
     monsterMove myMonsterMove;//This is a reference to the monsterMove script so I can access its UnityEvent. 
