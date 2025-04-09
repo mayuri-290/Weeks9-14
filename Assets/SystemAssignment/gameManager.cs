@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    public AudioSource hitSound;
+    AudioSource audioSource;
+    public AudioClip hitSound;
+
+    monsterMove myMonsterMove;
 
     public bool hasWon = false;
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        myMonsterMove.playerHit.AddListener(PlayHitSound);
+    }
+
     public void PlayHitSound()
     {
-        hitSound.Play();
+        audioSource.PlayOneShot(hitSound);
     }
 
 }
